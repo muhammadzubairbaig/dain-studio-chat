@@ -1,0 +1,50 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+/out-tsc
+# Node modules
+node_modules/
+
+# Output folder
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# IDE and editor settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+
+# Angular cache and build-related files
+.angular/
+*.tsbuildinfo
+
+# Generated files
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# Ignore Mac-specific hidden files
+*.DS_Store
+
+# Ignore package lock files if you use yarn/npm depending on your preference
+# package-lock.json
+# yarn.lock

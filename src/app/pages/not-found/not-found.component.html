@@ -1,0 +1,28 @@
+<div class="container flex items-center justify-center h-full mt-12">
+    <div
+        class="grid max-w-lg p-6 text-center shadow-2xl bg-neutral-50 rounded-xl md:p-12 place-items-center bg-opacity-5 backdrop-filter backdrop-blur"
+    >
+        <!-- Decorative circle with gradient background, holding the SVG icon -->
+        <div
+            class="grid mb-8 rounded-full bg-gradient-to-br from-neutral-900 to-indigo-300 w-28 h-28 place-items-center"
+        >
+            <!-- SVG icon representing a "not found" or error state -->
+            <img
+                src="assets/no-page-found.svg"
+                alt="No Page Available"
+                class="h-16 w-16 mb-4 text-gray-400"
+            />
+        </div>
+
+        <!-- Main message for the user, indicating that the page wasn't found -->
+        <h1 class="mb-8 text-3xl">The page you were looking for was not found</h1>
+
+        <!-- Button to navigate back home, styled with primary button styles -->
+        <button
+            (click)="navigate()"
+            class="px-4 py-2 text-white bg-primary rounded-md hover:bg-secondary focus:outline-none"
+        >
+            Go to Chat Screen
+        </button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+/* base */
+@import './tailwindcss/base.css';
+
+/* components */
+@import './tailwindcss/components.css';
+
+/* utilities */
+@import './tailwindcss/utilities.css';
+
+body {
+    overflow: hidden; /* Hide the body scroll */
+}

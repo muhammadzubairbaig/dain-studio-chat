@@ -1,0 +1,67 @@
+<!-- Container for Date Filter Inputs and Reset Button -->
+<div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 mb-4 mt-2">
+    <!-- Start Date Input Field -->
+    <div class="w-full sm:w-1/3">
+        <!-- Label for Start Date -->
+        <label
+            for="start-date"
+            class="block text-sm font-medium text-gray-700"
+            >Start Date</label
+        >
+
+        <!-- Start Date Input -->
+        <!-- Sets the maximum allowed date based on end date -->
+        <input
+            id="start-date"
+            type="date"
+            [(ngModel)]="startDate"
+            (change)="onStartDateChange()"
+            [max]="maxStartDate"
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        />
+        <!-- Tailwind CSS for styling -->
+    </div>
+
+    <!-- End Date Input Field -->
+    <div class="w-full sm:w-1/3">
+        <!-- Label for End Date -->
+        <label
+            for="end-date"
+            class="block text-sm font-medium text-gray-700"
+            >End Date</label
+        >
+        <!-- End Date Input -->
+        <!-- Sets the minimum allowed date based on start date -->
+        <input
+            id="end-date"
+            type="date"
+            [(ngModel)]="endDate"
+            (change)="onEndDateChange()"
+            [min]="minEndDate"
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        />
+        <!-- Tailwind CSS for styling -->
+    </div>
+
+    <!-- Reset Button -->
+    <div class="w-full sm:w-auto flex space-x-2">
+        <!-- Event handler to reset the date filters -->
+        <button
+            (click)="resetFilters()"
+            class="w-full sm:w-auto mt-6 px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary focus:outline-none"
+        >
+            Reset
+            <!-- Button text -->
+        </button>
+        <!-- Tailwind CSS for styling -->
+    </div>
+</div>
+
+<!-- Display Validation Error Message -->
+<div
+    *ngIf="dateError"
+    class="text-red-600 text-sm"
+>
+    {{ dateError }}
+    <!-- Display error message if there is any -->
+</div>

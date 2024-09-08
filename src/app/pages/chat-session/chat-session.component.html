@@ -1,0 +1,11 @@
+<!-- Main container taking full screen height -->
+<app-toaster></app-toaster>
+
+<div class="h-screen">
+    <div class="flex">
+        <div class="flex-grow">
+            <!-- Including the chat main component, passing chatSessions as an input -->
+            <app-chat-main [chatSessions]="chatSessions"></app-chat-main>
+        </div>
+    </div>
+</div>

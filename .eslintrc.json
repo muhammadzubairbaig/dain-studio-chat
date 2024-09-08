@@ -1,0 +1,123 @@
+{
+  "root": true, // Marks this as the root configuration, preventing ESLint from searching parent directories.
+  "ignorePatterns": [
+    "projects/**/*" // Exclude the 'projects' directory from linting.
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ], // Target all TypeScript files.
+      "extends": [
+        "eslint:recommended", // Extend ESLint's recommended rules.
+        "plugin:@typescript-eslint/recommended", // Extend recommended rules from @typescript-eslint.
+        "plugin:@angular-eslint/recommended", // Extend recommended rules for Angular.
+        "plugin:@angular-eslint/template/process-inline-templates", // Lint inline Angular templates.
+        "prettier" // Integrate Prettier for code formatting.
+      ],
+      "plugins": ["prettier"],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ], // Specify the TypeScript configuration file.
+        "createDefaultProgram": true // Allow ESLint to create a program instance.
+      },
+      "rules": {
+        // TypeScript-specific rules
+        "@typescript-eslint/no-explicit-any": "warn", // Warn against using 'any' type.
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ], // Disallow unused variables, but allow underscores as exceptions.
+        "@typescript-eslint/no-inferrable-types": "off", // Disable the rule that forbids explicit types when they can be inferred.
+        "@typescript-eslint/explicit-module-boundary-types": "off", // Turn off explicit return types for exported functions.
+        "@typescript-eslint/consistent-type-definitions": [
+          "error",
+          "interface"
+        ], // Enforce using 'interface' consistently.
+        "@typescript-eslint/no-empty-function": "warn", // Warn against empty functions.
+        "@typescript-eslint/no-non-null-assertion": "error", // Disallow non-null assertions.
+        "@typescript-eslint/no-var-requires": "error", // Disallow 'require' statements, prefer import syntax.
+        // Angular-specific rules
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case" // Enforce kebab-case for component selectors.
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase" // Enforce camelCase for directive selectors.
+          }
+        ],
+        "@angular-eslint/no-empty-lifecycle-method": "warn", // Warn against empty Angular lifecycle methods.
+        "@angular-eslint/no-output-native": "error", // Disallow output properties that conflict with native DOM events.
+        "@angular-eslint/no-host-metadata-property": "error", // Disallow the use of 'host' in Angular component metadata.
+        "@angular-eslint/no-input-rename": "error", // Disallow renaming of input properties.
+        "@angular-eslint/no-output-on-prefix": "error", // Disallow output properties prefixed with 'on'.
+        // ESLint core rules
+        "eqeqeq": [
+          "error",
+          "smart"
+        ], // Require the use of '===' and '!==' except for comparing with null.
+        "curly": "error", // Enforce consistent use of curly braces.
+        "no-debugger": "warn", // Warn against using 'debugger'.
+        "no-duplicate-imports": "error", // Disallow duplicate imports.
+        "no-shadow": "off", // Turn off the base no-shadow rule. 
+        "@typescript-eslint/no-shadow": [
+          "error"
+        ], // Enforce no-shadow using @typescript-eslint.
+        "no-use-before-define": "off", // Turn off the base no-use-before-define rule.
+        "@typescript-eslint/no-use-before-define": [
+          "error"
+        ], // Enforce no-use-before-define using @typescript-eslint.
+        "prefer-const": "error", // Enforce the use of 'const' for variables that are never reassigned.
+        "no-var": "error", // Disallow the use of 'var'.
+        "arrow-body-style": [
+          "error",
+          "as-needed"
+        ], // Enforce using braces in arrow functions only when necessary.
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 1
+          }
+        ], // Disallow multiple empty lines.
+        "comma-dangle": [
+          "error",
+          "always-multiline"
+        ], // Require a trailing comma in multiline objects, arrays, etc.
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ], // Enforce single quotes, but allow double quotes to avoid escaping.
+        "semi": [
+          "error",
+          "always"
+        ], // Enforce semicolons at the end of statements.
+        // Prettier Integration
+        "prettier/prettier": "error" // Treat Prettier formatting issues as ESLint errors.
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "parser": "@angular-eslint/template-parser",
+      "rules": {
+          "@angular-eslint/template/banana-in-box": "error",
+          "@angular-eslint/template/no-negated-async": "error",
+          "@angular-eslint/template/no-call-expression": "off"
+      }
+  }
+  ]
+}
