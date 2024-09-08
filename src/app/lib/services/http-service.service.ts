@@ -11,7 +11,7 @@ import { API_ENDPOINTS } from '@lib/constants';
     providedIn: 'root',
 })
 export class HttpService {
-    private readonly apiUrl = API_ENDPOINTS.CHAT_SESSIONS + 'sss'; // API endpoint
+    private readonly apiUrl = API_ENDPOINTS.CHAT_SESSIONS; // API endpoint
 
     constructor(private http: HttpClient) {}
 
