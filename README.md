@@ -220,7 +220,6 @@ Example of error handling:
     │   ├── components/            # Reusable components (chat, date-filter, toaster, etc.)
     │   ├── services/              # Application services (e.g., HttpService, CustomToasterService)
     │   ├── models/                # TypeScript interfaces and models (ChatSession, ChatMessage)
-    │   └── app.module.ts          # Root module for Angular
     ├── assets/                    # Static assets (images, icons)
     ├── environments/              # Environment configurations for development and production
     └── styles/                    # Global styles and TailwindCSS setup
