@@ -4,6 +4,12 @@
   <img src="https://api.iconify.design/logos:angular-icon.svg" alt="Angular brand" width="100" height="100"/>
 </p>
 
+<br>
+
+<p align='center'>
+  <a href="https://66ddc82c14f9441f7e2d9a12--dain-chat-session.netlify.app/" target="_blank">Live site</a>
+</p>
+
 ## **Overview**
 
 The Chat Session Management Application developed using Angular 18.2.2. It provides a seamless interface for managing chat sessions, filtering them by date. This application follows modern Angular practices, employing a modular architecture, adhering to SOLID principles, and implementing best practices for code quality and performance. Below is an in-depth description of the project's architecture, technologies, and future improvements.
